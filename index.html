@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Рыбка</title>
+    <style>
+        #canva2 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canva2"></canvas>
+<script>
+    const c2 = document.getElementById("canva2");
+
+    c2.width = 800;
+    c2.height = 300;
+    const ctx2 = c2.getContext("2d");
+
+    const image = new Image();
+    image.onload = () => {
+        const time = 80;
+        setInterval(() => {
+            //0
+            ctx2.save();
+            ctx2.drawImage(image, 0, 10);
+            ctx2.restore();
+
+            // 1
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-2 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -7, 18, 400, 300);
+                ctx2.restore();
+            }, time);
+
+            // 2
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-12 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -33, 35, 400, 300);
+                ctx2.restore();
+                ctx2.drawImage(image, 225, 0, 180, 300, 224, -5, 180, 300);
+                ctx2.restore();
+            }, time * 2);
+
+            // 3 +-
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-20 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -58, 57, 400, 300);
+                ctx2.restore();
+                ctx2.save();
+                ctx2.rotate(-2.5 * Math.PI / 180);
+                ctx2.drawImage(image, 235, 0, 235, 300, 229, 0, 235, 300);
+                ctx2.restore();
+            }, time * 3);
+
+            // 4
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-24 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -75, 67, 400, 300);
+                ctx2.restore();
+
+                ctx2.save();
+                ctx2.rotate(-5.5 * Math.PI / 180);
+                ctx2.drawImage(image, 240, 0, 240, 300, 223, 9.5, 240, 300);
+                ctx2.restore();
+            }, time * 4);
+
+            // 5
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-27 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -85, 77, 400, 300);
+                ctx2.restore();
+                ctx2.save();
+                ctx2.rotate(-12.5 * Math.PI / 180);
+                ctx2.drawImage(image, 220, 0, 220, 300, 186, 42, 220, 300);
+                ctx2.restore();
+            }, time * 5);
+
+            // 6
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-22 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -67, 73, 400, 300);
+                ctx2.restore();
+            }, time * 6);
+
+            //7
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-15 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -45, 58, 400, 300);
+                ctx2.restore();
+                ctx2.save();
+                ctx2.rotate(-23 * Math.PI / 180);
+                ctx2.drawImage(image, 222, 0, 222, 300, 150, 78, 222, 300);
+                ctx2.restore();
+            }, time * 7);
+
+            //8
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.rotate(-8 * Math.PI / 180);
+                ctx2.drawImage(image, 0, 0, 400, 300, -25, 38, 400, 300);
+                ctx2.restore();
+                ctx2.save();
+                ctx2.rotate(-31 * Math.PI / 180);
+                ctx2.drawImage(image, 240, 0, 240, 300, 135, 105, 240, 300);
+                ctx2.restore();
+            }, time * 8);
+
+            //9
+            setTimeout(() => {
+                ctx2.save();
+                ctx2.drawImage(image, 0, 0, 400, 300, 0, 20, 400, 300);
+                ctx2.restore();
+                ctx2.save();
+                ctx2.rotate(-20 * Math.PI / 180);
+                ctx2.drawImage(image, 242, 0, 242, 300, 178, 90, 242, 300);
+                ctx2.restore();
+            }, time * 9);
+
+        }, time * 10);
+    };
+    image.src = 'image-red.png';
+</script>
+</body>
+</html>
